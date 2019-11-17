@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <img src="./assets/pokedexopen.png">
+  <div id = "app">
+    <img id = "pokedex" src="./assets/pokedexopen.png">
     <PokedexShell>
 
       <!-- Pokiemon left screen -->
@@ -21,3 +21,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+  #pokedex {
+    
+  }
+
+  #app {
+      display: block;
+      text-align: center;
+  }
+</style>
