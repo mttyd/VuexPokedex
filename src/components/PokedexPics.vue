@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div id="pictures">
     <h1 id = "pictext">{{ msg }}</h1>  
-    hello world
+    
     <div id = "picpokemon" v-for = "eachpokemon in pokemon">
         <div id = "piclinks" v-for = "pic in eachpokemon.sprites">
              <img  v-bind:src="pic"/>             
@@ -37,8 +37,9 @@ export default {
     float: left;    
         
   }
-    #picpokemon {
-      width: 100%;
+    #pictures {
+      display: block;
+      text-align: center;
   }
 
 </style>

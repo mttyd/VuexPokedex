@@ -2,24 +2,21 @@
   <div id = "app">
     <img id = "pokedex" src="./assets/pokedexopen.png">
     <PokedexShell/>
-        
-      <!-- Pokiemon left screen -->
-      <!-- Pokedex right screen -->
-      <!-- Pokedex searchbox -->
-
-    <PokedexPics/>
-    
+    <PokedexPics/>   
+    <PokedexAPI/>    
   </div>
 </template>
 
 <script>
 import PokedexShell from './components/PokedexShell';
 import PokedexPics from './components/PokedexPics';
+import PokedexAPI from './components/PokedexAPI';
 export default {
   name: 'App',
   components: {
     PokedexShell,
-    PokedexPics
+    PokedexPics,
+    PokedexAPI
   }
 }
 </script>
