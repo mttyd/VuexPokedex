@@ -1,23 +1,25 @@
 <template>
   <div id = "app">
     <img id = "pokedex" src="./assets/pokedexopen.png">
-    <PokedexShell>
-
+    <PokedexShell/>
+        
       <!-- Pokiemon left screen -->
       <!-- Pokedex right screen -->
       <!-- Pokedex searchbox -->
 
-    </PokedexShell>
+    <PokedexPics/>
+    
   </div>
 </template>
 
 <script>
 import PokedexShell from './components/PokedexShell';
-
+import PokedexPics from './components/PokedexPics';
 export default {
   name: 'App',
   components: {
-    PokedexShell
+    PokedexShell,
+    PokedexPics
   }
 }
 </script>
@@ -25,11 +27,15 @@ export default {
 <style scoped>
 
   #pokedex {
-    
+    font-size: 1em;
   }
 
   #app {
       display: block;
+      text-align: center;
+  }
+
+    #picpokemon {
       text-align: center;
   }
 </style>
