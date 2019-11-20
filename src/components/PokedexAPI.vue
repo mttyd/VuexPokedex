@@ -2,7 +2,7 @@
   <div>
     <h1 id = "pokedatatext">{{ msg }}</h1>  
     <div>
-        {{ pokedata }}
+        {{ getpokemon }}
     </div>    
   </div>  
 </template>
@@ -23,15 +23,18 @@ export default {
   //   }
   // },
   computed: {
-    getpokemonfromAPI(searchpokemon){
-      if(this.searchpokemon){
-        const url = `https://pokeapi.co/api/v2/pokemon/${this.searchpokemon}`;
-        fetch(url)
-        .then(response => response.json())
-        .then(data => this.pokedata  = data)
-      }
-
+    getpokemon: function(){
+      this.$store.dispatch('getpokemonfromAPI', this.searchpokemon)    
     }
+    // getpokemonfromAPI(searchpokemon){
+    //   if(this.searchpokemon){
+    //     const url = `https://pokeapi.co/api/v2/pokemon/${this.searchpokemon}`;
+    //     fetch(url)
+    //     .then(response => response.json())
+    //     .then(data => this.pokedata  = data)
+    //   }
+
+    // }
   }
 }
 </script>

@@ -4,7 +4,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 export const store = new Vuex.Store({
     state:{
-        pokemon:[{
+        pokemon:{
             name: "pikachu",
             sprites: {
                 back_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
@@ -34,8 +34,25 @@ export const store = new Vuex.Store({
                     }
                 }],
             weight: 60
-        }]
+        },
+        pokedata: {}
 
+    },
+    
+    actions: {
+        getpokemonfromAPI(state, searchpokemon) {
+            if(this.searchpokemon){
+                const url = `https://pokeapi.co/api/v2/pokemon/${this.searchpokemon}`;
+                fetch(url)
+                .then(response => response.json())
+                .then(response => state.commit('setpokemon', 'response'))                
+              }  
+        }
+    },
+
+    mutations: {
+        setpokemon: (state, response) => {
+            state.pokedata = Object.assign(pokedata, response.data)
+        }
     }
-
 })
